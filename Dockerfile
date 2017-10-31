@@ -29,6 +29,8 @@ RUN curl -SL "http://dev.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.73-linux-x8
     apt-get purge -y --auto-remove binutils && \
     rm -rf /var/lib/apt/lists/*
 
+COPY my.cnf /etc/my.cnf
+
 ENV PATH $PATH:/usr/local/mysql/bin:/usr/local/mysql/scripts
 
 WORKDIR /usr/local/mysql
